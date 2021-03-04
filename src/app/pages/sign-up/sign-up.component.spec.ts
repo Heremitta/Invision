@@ -29,4 +29,41 @@ describe('SignUpComponent', () => {
   it('Componente Sign Up deve existir!', () => {
     expect(component).toBeTruthy();
   });
+
+  it('Formulario deve ser valido', ()=>{
+    component.form.get('nome').setValue('saulo')
+    component.form.get('email').setValue('sauloramosjunior@hotmail.com')
+    component.form.get('password').setValue('abcd1234')
+    expect(component.form.valid).toBeTruthy()
+  })
+  it('Formulario deve ser invalido devido ao email fora de padrao', ()=>{
+    component.form.get('nome').setValue('saulo')
+    component.form.get('email').setValue('hotmail.comsauloramosjunior@')
+    component.form.get('password').setValue('abcd1234')
+    expect(component.form.valid).toBeFalsy()
+  })
+  it('Formulario deve ser invalido devido ao nome em branco', ()=>{
+    component.form.get('nome').setValue('')
+    component.form.get('email').setValue('sauloramosjunior@hotmail.com')
+    component.form.get('password').setValue('abcd1234')
+    expect(component.form.valid).toBeFalsy()
+  })
+  it('Formulario deve ser invalido devido ao email em branco', ()=>{
+    component.form.get('nome').setValue('saulo')
+    component.form.get('email').setValue('')
+    component.form.get('password').setValue('abcd1234')
+    expect(component.form.valid).toBeFalsy()
+  })
+  it('Formulario deve ser invalido devido ao password em branco', ()=>{
+    component.form.get('nome').setValue('saulo')
+    component.form.get('email').setValue('sauloramosjunior@hotmail.com')
+    component.form.get('password').setValue('')
+    expect(component.form.valid).toBeFalsy()
+  })
+  it('Formulario deve ser invalido devido ao password ter menos de 6 digitos', ()=>{
+    component.form.get('nome').setValue('saulo')
+    component.form.get('email').setValue('sauloramosjunior@hotmail.com')
+    component.form.get('password').setValue('123ab')
+    expect(component.form.valid).toBeFalsy()
+  })
 });

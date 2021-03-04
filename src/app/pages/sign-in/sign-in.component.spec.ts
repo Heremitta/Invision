@@ -11,13 +11,13 @@ import { SignInComponent } from './sign-in.component';
 describe('SignInComponent', () => {
   let component: SignInComponent;
   let fixture: ComponentFixture<SignInComponent>;
+  let SocialAuth: SocialAuthService
 
   beforeEach(async () => {
-    let spy
     await TestBed.configureTestingModule({
       imports:[RouterTestingModule,MatSnackBarModule, ReactiveFormsModule],
       declarations: [ SignInComponent ],
-      providers:[{ provide: SocialAuthService, useValue: spy }, SlickCarouselComponent]
+      providers:[{ provide: SocialAuthService, useValue: SocialAuth }, SlickCarouselComponent]
     })
     .compileComponents();
   });
@@ -31,4 +31,26 @@ describe('SignInComponent', () => {
   it('O componente Sign In deve existir!', () => {
     expect(component).toBeTruthy();
   });
+
+  it('Formulario deve ser valido', ()=>{
+    component.form.get('email').setValue('sauloramosjunior@hotmail.com')
+    component.form.get('password').setValue('abcd1234')
+    expect(component.form.valid).toBeTruthy()
+  })
+  it('Formulario deve ser invalido devido ao email fora de padrao', ()=>{
+    component.form.get('email').setValue('hotmail.comsauloramosjunior@')
+    component.form.get('password').setValue('abcd1234')
+    expect(component.form.valid).toBeFalsy()
+  })
+  it('Formulario deve ser invalido devido ao email em branco', ()=>{
+    component.form.get('email').setValue('')
+    component.form.get('password').setValue('abcd1234')
+    expect(component.form.valid).toBeFalsy()
+  })
+  it('Formulario deve ser invalido devido ao password em branco', ()=>{
+    component.form.get('email').setValue('sauloramosjunior@hotmail.com')
+    component.form.get('password').setValue('')
+    expect(component.form.valid).toBeFalsy()
+  })
+
 });
