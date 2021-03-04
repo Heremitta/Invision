@@ -1,0 +1,106 @@
+$white: #fff;
+$google-blue: #4285f4;
+$button-active-blue: #1669F2;
+.sign-in{
+  overflow: hidden;
+
+  .contentForm{
+    position: relative;
+    .titleInvision {
+      position: absolute;
+      top: 10px;
+      right: 50px;
+    }
+    .form{
+      width: 100%;
+      max-width: 450px;
+      padding-top: 40px;
+      form{
+        width: 90%;
+        mat-form-field {
+          width: 100%;
+        }
+        .coverSignInButton{
+          .signInButton{
+            border-radius: 30px!important;
+            background: grey!important;
+            transition: all .3s ease-in-out;
+            &:hover{
+              background: rgb(153, 153, 153)!important;
+            }
+          }
+        }
+        span{
+          font-size: 18px;
+            hr {
+              // height: 1px;
+              background: grey;
+              width: 40%;
+          }
+        }
+      }
+      .hiden-password{
+        background: transparent!important;
+        border: 0px;
+      }
+    }
+  }
+}
+.google-btn {
+  cursor: pointer;
+  width: 184px;
+  height: 42px;
+  margin-top: 35px;
+  background-color: $white;
+  border-radius: 35px;
+  box-shadow: 0 3px 4px 0 rgba(0,0,0,.25);
+  .google-icon-wrapper {
+    position: absolute;
+    margin-top: 1px;
+    margin-left: 1px;
+    width: 40px;
+    height: 40px;
+    border-radius: 2px;
+    background-color: $white;
+  }
+  .google-icon {
+    position: absolute;
+    margin-top: 11px;
+    margin-left: 11px;
+    width: 18px;
+    height: 18px;
+  }
+  .btn-text {
+    float: right;
+    margin: 11px 5px 0 0;
+    color: black;
+    font-size: 14px;
+    letter-spacing: 0.2px;
+    font-family: "Roboto";
+  }
+  &:hover {
+    box-shadow: 0 0 6px $google-blue;
+  }
+  &:active {
+    // background: $button-active-blue;
+  }
+}
+
+@media screen and (max-Width:700px){
+  .sign-in{
+    .w-50{
+      width: 100%!important;
+    }
+    flex-direction: column!important;
+  }
+}
+
+.img1{
+  background: #85c4cb;
+}
+.img2{
+  background: #0188a5;
+}
+.img3{
+  background: #137696;
+}

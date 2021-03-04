@@ -1,0 +1,30 @@
+.carrocel{
+  height: 100%;
+  .slide{
+    position: relative;
+    // padding: 0 2px;
+    height: 100%;
+  }
+}
+.img1{
+  background: #85c4cb;
+}
+.img2{
+  background: #0188a5;
+}
+.img3{
+  background: #137696;
+}
+@media screen and (max-Width:700px){
+  .content-all{
+    flex-direction: column;
+    .h-100vh, .h-50vh, .carousel{
+      height: 300px!important;
+      min-height: 350px;
+    }
+    .w-50{
+      width: 100%!important;
+    }
+  }
+
+}

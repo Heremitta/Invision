@@ -1,0 +1,252 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+*:focus {
+  outline: none!important;
+}
+.w-100{
+  width:100%!important;
+}
+.w-75{
+  width:75%!important;
+}
+.w-50{
+  width:50%!important;
+}
+.w-40{
+  width:40%!important;
+}
+.w-45{
+  width:45%!important;
+}
+.w-33{
+  width:33%!important;
+}
+.w-30{
+  width:30%!important;
+}
+.p-0{
+  padding: 0!important;
+}
+.pointer{
+  cursor: pointer!important;
+}
+.justify-content-center{
+  justify-content: center!important;
+}
+.justify-content-end{
+  justify-content: flex-end;
+}
+.align-items-center{
+  align-items: center!important;
+}
+.d-flex{
+  display: flex!important;
+}
+.flex-column{
+  flex-direction: column;
+}
+.text-center{
+  text-align: center;
+}
+.h-100vh{
+  height: 100%;
+  min-height: 100vh;
+}
+.h-50vh{
+  height: 50vh;
+}
+.absolute{
+  position: absolute;
+}
+.relative{
+  position: relative;
+}
+.text-right{
+  text-align: right!important;
+}
+.fs-15{
+  font-size: 15px!important;
+}
+.fs-20{
+  font-size: 20px!important;
+}
+.fs-25{
+  font-size: 25px!important;
+}
+.fs-30{
+  font-size: 30px!important;
+}
+.fs-35{
+  font-size: 35px!important;
+}
+.m-0{
+  margin: 0!important;
+}
+.m-1{
+  margin: 1em!important;
+}
+.m-2{
+  margin: 1.5em!important;
+}
+.m-3{
+  margin: 2em!important;
+}
+.m-4{
+  margin: 2.5em!important;
+}
+.m-5{
+  margin: 3em!important;
+}
+.mr-0{
+  margin-right: 0!important;
+}
+.mr-1{
+  margin-right: 1em!important;
+}
+.mr-2{
+  margin-right: 1.5em!important;
+}
+.mr-3{
+  margin-right: 2em!important;
+}
+.mr-4{
+  margin-right: 2.5em!important;
+}
+.mr-5{
+  margin-right: 3em!important;
+}
+.ml-0{
+  margin-left: 0!important;
+}
+.ml-1{
+  margin-left: 1em!important;
+}
+.ml-2{
+  margin-left: 1.5em!important;
+}
+.ml-3{
+  margin-left: 2em!important;
+}
+.ml-4{
+  margin-left: 2.5em!important;
+}
+.ml-5{
+  margin-left: 3em!important;
+}
+.mt-0{
+  margin-top: 0!important;
+}
+.mt-1{
+  margin-top: 1em!important;
+}
+.mt-2{
+  margin-top: 1.5em!important;
+}
+.mt-3{
+  margin-top: 2em!important;
+}
+.mt-4{
+  margin-top: 2.5em!important;
+}
+.mt-5{
+  margin-top: 3em!important;
+}
+.mb-0{
+  margin-bottom: 0!important;
+}
+.mb-1{
+  margin-bottom: 1em!important;
+}
+.mb-2{
+  margin-bottom: 1.5em!important;
+}
+.mb-3{
+  margin-bottom: 2em!important;
+}
+.mb-4{
+  margin-bottom: 2.5em!important;
+}
+.mb-5{
+  margin-bottom: 3em!important;
+}
+.letter-spacing-5{
+  letter-spacing: 5px;
+}
+.letter-spacing-3{
+  letter-spacing: 3px;
+}
+.decoration-hover{
+  &:hover{
+    text-decoration: underline;
+  }
+}
+.text-light{
+  color:#fff;
+}
+.text-blue-mutted{
+  color: rgb(158, 182, 201);
+}
+.text-mutted{
+  color:silver;
+}
+.text-grey{
+  color:grey;
+}
+.fw-200{
+  font-weight: 200!important;
+}
+.fw-300{
+  font-weight: 300!important;
+}
+.fw-400{
+  font-weight: 400!important;
+}
+.line-height-33{
+  line-height: 33px;
+}
+.content-all{
+  .slick-dotted.slick-slider{
+    margin: 0px!important;
+  }
+  .carrocel{
+    .slide{
+    }
+    .slick-dots{
+      position: absolute!important;
+      bottom: 50px!important;
+      left: 0px!important;
+      li{
+        margin: 5px!important;
+        &.slick-active {
+          width: 40px;
+      }
+      }
+    }
+    [role=presentation]{
+      &.slick-active{
+        button{
+          &::before{
+            width: 40px!important;
+            border-radius: 15px!important;
+          }
+        }
+      }
+      button{
+        background: white!important;
+        border-radius: 50%;
+        border:1px solid rgba(128, 128, 128, 0.781);
+        &::before{
+          content:''!important;
+          width: 20px!important;
+          height: 20px!important;
+          border-radius: 50%!important;
+          background: white!important;
+          transition: all .3s ease-out;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+<div class="content sign-in w-100 d-flex">
+  <div class="contentForm w-100 d-flex justify-content-center align-items-center flex-column mt-5">
+    <p class="titleInvision text-right fs-35 letter-spacing-3"><strong>Invision</strong></p>
+    <div class="form d-flex justify-content-center flex-column align-items-center mt-5">
+      <h2 class="text-center fs-30 mb-4 text-grey fw-400">Welcome to Invision</h2>
+      <form novalidate autocomplete="off" class="example-form"
+            #formulario="ngForm" [formGroup]="form" class="d-flex flex-column">
+        <mat-form-field class="example-full-width">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput formControlName="email" placeholder="Ex. pat@example.com">
+          <mat-error *ngIf="form.get('email').hasError('pattern') && !form.get('email').hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="form.get('email').hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Password</mat-label>
+          <input [type]="hide ? 'password' : 'text'" matInput formControlName="password" >
+          <button class="hiden-password pointer" mat-icon-button matSuffix (click)="$event.preventDefault();hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          <mat-error *ngIf="form.get('password').hasError('required')">
+            Password is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <div class="d-flex justify-content-end w-100">
+          <button class="text-grey p-0" mat-button (click)="$event.preventDefault(); openSnackBar('Esqueceu a Senha? bahhh', 'fechar')">Forgot password?</button>
+        </div>
+        <div class="coverSignInButton d-flex justify-content-center mt-3">
+          <button mat-flat-button color="primary" class="signInButton w-40" (click)="signIn()">Sing In</button>
+        </div>
+        <span class="d-flex align-items-center justify-content-center text-grey mt-3"><hr >Or<hr ></span>
+        <div class="d-flex justify-content-center align-items-center">
+          <div class="google-btn" (click)="entrarComGoogle()">
+            <div class="google-icon-wrapper">
+              <img class="google-icon" src="../../../assets/images/logo-google.png"/>
+            </div>
+            <p class="btn-text text-center w-75"><strong>Sign in with Google</strong></p>
+          </div>
+        </div>
+        <p class="text-center mt-2 text-grey pointer" routerLink='/sign-up'>New Invision? <span class="text-mutted">Crate Account</span></p>
+      </form>
+    </div>
+  </div>
+</div>
+
