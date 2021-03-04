@@ -39,7 +39,7 @@ export class SignInComponent implements OnInit {
       if(this.form.get('email').hasError('required')){
         this.openSnackBar('Email não pode ser vazio!', 'fechar')
       }
-      if(this.form.get('password').hasError('required')){
+      if(this.form.get('password').hasError('required') && !this.form.get('email').hasError('required') && !this.form.get('email').hasError('pattern') ){
         this.openSnackBar('Senha não pode ser vazia!', 'fechar')
       }
       return false
